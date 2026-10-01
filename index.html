@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>VORANIX</title>
 
 <style>
+
 *{
-  box-sizing:border-box;
   margin:0;
   padding:0;
+  box-sizing:border-box;
 }
 
 html{
@@ -17,144 +20,1095 @@ html{
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
   background:#050914;
   color:#fff;
-  min-height:100vh;
+  font-family:Arial,Helvetica,sans-serif;
+  overflow-x:hidden;
 }
 
-button{
-  font-family:inherit;
-}
 
-.header{
+/* HEADER */
+
+header{
   position:fixed;
   top:0;
   left:0;
-  right:0;
+  width:100%;
   height:70px;
+
   z-index:1000;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 5%;
-  background:rgba(5,9,20,.88);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(80,140,255,.12);
+
+  padding:0 6%;
+
+  background:rgba(3,8,20,.88);
+  backdrop-filter:blur(15px);
+
+  border-bottom:1px solid rgba(60,150,255,.15);
 }
 
 .logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
   font-size:25px;
   font-weight:900;
-  letter-spacing:2px;
-  color:#fff;
+  letter-spacing:3px;
 }
 
-.logo-dragon{
-  width:38px;
-  height:38px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:12px;
-  background:linear-gradient(135deg,#1478ff,#743cff);
-  box-shadow:0 0 25px rgba(45,115,255,.45);
-  font-size:22px;
+.logo span{
+  color:#2aaeff;
 }
 
-.nav{
+nav{
   display:flex;
   gap:25px;
 }
 
-.nav button{
-  background:none;
-  border:0;
-  color:#9da8bf;
-  cursor:pointer;
+nav a{
+  color:#b9c6d8;
+  text-decoration:none;
   font-size:14px;
-  transition:.2s;
+  font-weight:bold;
 }
 
-.nav button:hover,
-.nav button.active{
+nav a:hover{
   color:#fff;
 }
 
-.header-actions{
-  display:flex;
-  gap:10px;
-  align-items:center;
+.search{
+  font-size:25px;
 }
 
-.icon-btn{
-  width:40px;
-  height:40px;
-  border:1px solid rgba(255,255,255,.1);
-  border-radius:50%;
-  background:#10182a;
-  color:#fff;
-  cursor:pointer;
-}
+
+/* HERO */
 
 .hero{
-  min-height:650px;
-  padding:150px 7% 90px;
+  min-height:720px;
+
+  position:relative;
+
   display:flex;
   align-items:center;
-  position:relative;
+
   overflow:hidden;
+
   background:
-    radial-gradient(circle at 75% 45%,rgba(43,95,255,.25),transparent 35%),
-    radial-gradient(circle at 90% 80%,rgba(126,52,255,.18),transparent 30%),
-    linear-gradient(90deg,#050914 0%,rgba(5,9,20,.9) 45%,rgba(5,9,20,.25) 100%);
+  linear-gradient(
+    90deg,
+    #050914 0%,
+    #050914 28%,
+    rgba(5,9,20,.65) 60%,
+    #050914 100%
+  );
 }
 
-.hero:after{
-  content:"";
+
+/* IMAGEM DO KAEL */
+
+.hero-kael{
   position:absolute;
-  right:-100px;
-  top:80px;
-  width:620px;
-  height:620px;
-  border-radius:50%;
-  background:radial-gradient(circle,rgba(43,119,255,.2),transparent 65%);
-  pointer-events:none;
+
+  right:-30px;
+  bottom:0;
+
+  width:55%;
+  max-width:700px;
+
+  height:90%;
+
+  object-fit:cover;
+
+  object-position:center top;
+
+  opacity:.8;
+
+  filter:drop-shadow(
+    0 0 35px
+    rgba(30,160,255,.25)
+  );
 }
+
+
+/* CONTEÚDO */
 
 .hero-content{
-  max-width:650px;
   position:relative;
-  z-index:2;
+
+  z-index:5;
+
+  width:60%;
+
+  padding-left:7%;
+  padding-top:70px;
 }
 
-.badge{
-  display:inline-block;
-  padding:7px 13px;
-  border:1px solid rgba(87,145,255,.35);
-  border-radius:30px;
-  background:rgba(34,85,180,.15);
-  color:#70a9ff;
-  font-size:12px;
-  margin-bottom:18px;
+.tag{
+  color:#35b5ff;
+
+  font-size:13px;
+
+  font-weight:bold;
+
+  letter-spacing:3px;
+
+  margin-bottom:15px;
 }
 
 .hero h1{
-  font-size:clamp(42px,7vw,78px);
-  line-height:.98;
-  margin-bottom:20px;
-  letter-spacing:-2px;
-}
+  font-size:clamp(45px,7vw,80px);
 
-.hero h1 span{
-  color:#579cff;
+  line-height:.92;
+
+  margin-bottom:20px;
 }
 
 .hero p{
-  color:#b2bdd1;
+  max-width:560px;
+
+  color:#c4cfde;
+
   font-size:17px;
+
+  line-height:1.6;
+}
+
+
+/* BOTÕES */
+
+.buttons{
+  display:flex;
+
+  gap:12px;
+
+  margin-top:30px;
+}
+
+.btn{
+  border:none;
+
+  padding:14px 25px;
+
+  border-radius:8px;
+
+  font-size:15px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+}
+
+.btn-primary{
+  background:#fff;
+
+  color:#050914;
+}
+
+.btn-secondary{
+  color:#fff;
+
+  background:rgba(255,255,255,.12);
+
+  border:1px solid rgba(255,255,255,.2);
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+
+/* SEÇÕES */
+
+section{
+  padding:35px 6%;
+}
+
+.section-title{
+  font-size:24px;
+
+  margin-bottom:20px;
+}
+
+
+/* CARDS */
+
+.cards{
+  display:grid;
+
+  grid-template-columns:
+  repeat(4,1fr);
+
+  gap:18px;
+}
+
+.card{
+  position:relative;
+
+  min-height:270px;
+
+  overflow:hidden;
+
+  border-radius:12px;
+
+  background:#0b1425;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  transition:.3s;
+
+  cursor:pointer;
+}
+
+.card:hover{
+  transform:scale(1.03);
+
+  border-color:#2aaeff;
+}
+
+
+/* POSTER */
+
+.poster{
+  width:100%;
+
+  height:270px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:70px;
+
+  background:
+  radial-gradient(
+    circle,
+    #174c78,
+    #080e1b 70%
+  );
+}
+
+
+/* KAEL CARD */
+
+.card-kael{
+  background-image:
+  linear-gradient(
+    0deg,
+    rgba(3,7,15,.95),
+    transparent 70%
+  ),
+  url("https://i.ibb.co/m52RssZz/kael-voranix.png");
+
+  background-size:cover;
+
+  background-position:center top;
+}
+
+
+/* INFORMAÇÕES */
+
+.card-info{
+  position:absolute;
+
+  bottom:0;
+
+  left:0;
+  right:0;
+
+  padding:20px;
+
+  background:
+  linear-gradient(
+    transparent,
+    rgba(3,7,15,.98)
+  );
+}
+
+.card-info h3{
+  font-size:17px;
+
+  margin-bottom:5px;
+}
+
+.card-info p{
+  color:#aebbd0;
+
+  font-size:12px;
+}
+
+
+/* CONTINUE */
+
+.continue-card{
+  height:180px;
+
+  position:relative;
+
+  display:flex;
+
+  align-items:flex-end;
+
+  padding:20px;
+
+  overflow:hidden;
+
+  border-radius:12px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #123a60,
+    #07101f
+  );
+}
+
+.continue-card p{
+  color:#9eacc0;
+
+  margin-top:8px;
+}
+
+.progress{
+  position:absolute;
+
+  bottom:0;
+  left:0;
+
+  width:62%;
+
+  height:4px;
+
+  background:#29a9ff;
+}
+
+
+/* MODAL */
+
+.filme{
+  display:none;
+
+  position:fixed;
+
+  inset:0;
+
+  z-index:2000;
+
+  align-items:center;
+  justify-content:center;
+
+  padding:20px;
+
+  background:rgba(0,0,0,.9);
+}
+
+.filme-caixa{
+  width:min(850px,100%);
+
+  padding:40px;
+
+  position:relative;
+
+  border-radius:18px;
+
+  background:
+  linear-gradient(
+    145deg,
+    #0c1930,
+    #050914
+  );
+
+  border:1px solid rgba(50,170,255,.25);
+}
+
+.fechar{
+  position:absolute;
+
+  top:15px;
+  right:15px;
+
+  width:40px;
+  height:40px;
+
+  border:none;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,.1);
+
+  color:#fff;
+
+  font-size:20px;
+
+  cursor:pointer;
+}
+
+.filme-caixa h2{
+  font-size:42px;
+
+  margin-bottom:10px;
+}
+
+.meta{
+  color:#4dbaff;
+
+  margin-bottom:20px;
+}
+
+.filme-caixa p{
+  color:#bdc8d8;
+
   line-height:1.7;
- 
+}
+
+
+/* PLAYER */
+
+.player{
+  display:none;
+
+  position:fixed;
+
+  inset:0;
+
+  z-index:3000;
+
+  align-items:center;
+  justify-content:center;
+
+  padding:20px;
+
+  background:#000;
+}
+
+.player-caixa{
+  width:min(1000px,100%);
+
+  position:relative;
+}
+
+.player-caixa video{
+  width:100%;
+
+  border-radius:10px;
+}
+
+.player-caixa h2{
+  margin-bottom:15px;
+}
+
+.fechar-player{
+  position:absolute;
+
+  right:0;
+  top:-50px;
+
+  width:40px;
+  height:40px;
+
+  border:none;
+
+  border-radius:50%;
+
+  background:#222;
+
+  color:#fff;
+
+  font-size:20px;
+}
+
+
+/* FOOTER */
+
+footer{
+  padding:50px 20px;
+
+  text-align:center;
+
+  color:#66758b;
+
+  border-top:1px solid rgba(255,255,255,.06);
+}
+
+
+/* CELULAR */
+
+@media(max-width:800px){
+
+  header{
+    padding:0 20px;
+  }
+
+  nav{
+    display:none;
+  }
+
+  .hero{
+    min-height:700px;
+  }
+
+  .hero-kael{
+    right:-150px;
+
+    width:90%;
+
+    height:75%;
+
+    opacity:.4;
+  }
+
+  .hero-content{
+    width:100%;
+
+    padding:
+    120px 25px 50px;
+  }
+
+  .hero h1{
+    font-size:48px;
+  }
+
+  .hero p{
+    font-size:15px;
+  }
+
+  .cards{
+    grid-template-columns:
+    repeat(2,1fr);
+  }
+
+  .poster{
+    height:230px;
+  }
+
+  .card{
+    min-height:230px;
+  }
+
+  .filme-caixa{
+    padding:30px 22px;
+  }
+
+  .filme-caixa h2{
+    font-size:32px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+  <div class="logo">
+    VORAN<span>IX</span>
+  </div>
+
+  <nav>
+    <a href="#">Início</a>
+    <a href="#filmes">Filmes</a>
+    <a href="#universo">Universo</a>
+    <a href="#novidades">Novidades</a>
+    <a href="#">Minha Lista</a>
+  </nav>
+
+  <div class="search">
+    🔍
+  </div>
+
+</header>
+
+
+<main>
+
+
+<section class="hero">
+
+  <img
+    class="hero-kael"
+    src="https://i.ibb.co/m52RssZz/kael-voranix.png"
+    alt="Kael">
+
+  <div class="hero-content">
+
+    <div class="tag">
+      VORANIX ORIGINAL
+    </div>
+
+    <h1>
+      O VOO DE<br>
+      NYMERIS
+    </h1>
+
+    <p>
+      Quando um jovem aventureiro encontra uma criatura
+      lendária, os dois embarcam em uma jornada que poderá
+      mudar o destino de um mundo inteiro.
+    </p>
+
+    <div class="buttons">
+
+      <button
+        class="btn btn-primary"
+        onclick="abrirFilme()">
+
+        ▶ Assistir
+
+      </button>
+
+
+      <button
+        class="btn btn-secondary"
+        onclick="adicionarLista()">
+
+        ＋ Minha Lista
+
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section id="filmes">
+
+  <h2 class="section-title">
+    Em destaque
+  </h2>
+
+  <div class="cards">
+
+
+    <article
+      class="card"
+      onclick="abrirFilme()">
+
+      <div class="poster">
+        🐉
+      </div>
+
+      <div class="card-info">
+
+        <h3>
+          O Voo de Nymeris
+        </h3>
+
+        <p>
+          Fantasia • Aventura
+        </p>
+
+      </div>
+
+    </article>
+
+
+
+    <article class="card">
+
+      <div class="poster card-kael"></div>
+
+      <div class="card-info">
+
+        <h3>
+          Kael
+        </h3>
+
+        <p>
+          Personagem • VORANIX
+        </p>
+
+      </div>
+
+    </article>
+
+
+
+    <article class="card">
+
+      <div class="poster">
+        🏰
+      </div>
+
+      <div class="card-info">
+
+        <h3>
+          Reino de Aether
+        </h3>
+
+        <p>
+          Fantasia • Mundo
+        </p>
+
+      </div>
+
+    </article>
+
+
+
+    <article class="card">
+
+      <div class="poster">
+        ⚔️
+      </div>
+
+      <div class="card-info">
+
+        <h3>
+          As Crônicas
+        </h3>
+
+        <p>
+          Aventura • Ação
+        </p>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+
+<section>
+
+  <h2 class="section-title">
+    Continue assistindo
+  </h2>
+
+  <div class="continue-card">
+
+    <div>
+
+      <h3>
+        O Voo de Nymeris
+      </h3>
+
+      <p>
+        Continuar assistindo
+      </p>
+
+    </div>
+
+    <div class="progress"></div>
+
+  </div>
+
+</section>
+
+
+
+<section id="universo">
+
+  <h2 class="section-title">
+    Universo VORANIX
+  </h2>
+
+  <div class="cards">
+
+
+    <article class="card">
+
+      <div class="poster">
+        🐲
+      </div>
+
+      <div class="card-info">
+
+        <h3>
+          Criaturas
+        </h3>
+
+        <p>
+          Conheça o universo
+        </p>
+
+      </div>
+
+    </article>
+
+
+
+    <article class="card">
+
+      <div class="poster">
+        🗺️
+      </div>
+
+      <div class="card-info">
+
+        <h3>
+          Mundos
+        </h3>
+
+        <p>
+          Explore novos lugares
+        </p>
+
+      </div>
+
+    </article>
+
+
+
+    <article class="card">
+
+      <div class="poster">
+        ⚔️
+      </div>
+
+      <div class="card-info">
+
+        <h3>
+          Personagens
+        </h3>
+
+        <p>
+          Descubra suas histórias
+        </p>
+
+      </div>
+
+    </article>
+
+
+
+    <article class="card">
+
+      <div class="poster">
+        📖
+      </div>
+
+      <div class="card-info">
+
+        <h3>
+          Histórias
+        </h3>
+
+        <p>
+          Muito mais para explorar
+        </p>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+
+<section id="novidades">
+
+  <h2 class="section-title">
+    Novidades
+  </h2>
+
+  <div class="cards">
+
+    <article class="card">
+
+      <div class="poster">
+        🌌
+      </div>
+
+      <div class="card-info">
+
+        <h3>
+          Em breve
+        </h3>
+
+        <p>
+          Novas histórias VORANIX
+        </p>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+</main>
+
+
+
+<!-- MODAL -->
+
+<div
+  id="filme"
+  class="filme">
+
+  <div class="filme-caixa">
+
+    <button
+      class="fechar"
+      onclick="fecharFilme()">
+
+      ✕
+
+    </button>
+
+
+    <div class="tag">
+      VORANIX ORIGINAL
+    </div>
+
+
+    <h2>
+      O Voo de Nymeris
+    </h2>
+
+
+    <div class="meta">
+      2026 • Fantasia • Aventura
+    </div>
+
+
+    <p>
+      Kael sempre sonhou em conhecer os mistérios
+      além das fronteiras de seu reino.
+
+      Sua vida muda quando ele encontra Nymeris,
+      uma criatura lendária que guarda segredos
+      capazes de transformar o destino de todos.
+
+      Juntos, eles precisam enfrentar perigos,
+      descobrir a verdade e aprender a confiar
+      um no outro.
+    </p>
+
+
+    <div class="buttons">
+
+      <button
+        class="btn btn-primary"
+        onclick="abrirPlayer()">
+
+        ▶ Começar filme
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- PLAYER -->
+
+<div
+  id="player"
+  class="player">
+
+  <div class="player-caixa">
+
+    <button
+      class="fechar-player"
+      onclick="fecharPlayer()">
+
+      ✕
+
+    </button>
+
+
+    <h2>
+      O Voo de Nymeris
+    </h2>
+
+
+    <video controls>
+
+      <source
+        src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+        type="video/mp4">
+
+    </video>
+
+  </div>
+
+</div>
+
+
+
+<footer>
+
+  VORANIX © 2026
+
+  <br><br>
+
+  Grandes histórias, um só lugar.
+
+</footer>
+
+
+
+<script>
+
+function abrirFilme(){
+
+  document.getElementById("filme").style.display="flex";
+
+}
+
+
+function fecharFilme(){
+
+  document.getElementById("filme").style.display="none";
+
+}
+
+
+function abrirPlayer(){
+
+  document.getElementById("filme").style.display="none";
+
+  document.getElementById("player").style.display="flex";
+
+}
+
+
+function fecharPlayer(){
+
+  const player =
+    document.getElementById("player");
+
+  const video =
+    player.querySelector("video");
+
+  video.pause();
+
+  video.currentTime=0;
+
+  player.style.display="none";
+
+}
+
+
+function adicionarLista(){
+
+  alert(
+    "❤️ O Voo de Nymeris foi adicionado à sua lista!"
+  );
+
+}
+
+</script>
+
+
+</body>
+</html>
